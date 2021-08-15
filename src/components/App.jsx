@@ -10,6 +10,8 @@ function App() {
   }
   function handleSubmit() {
     setHeading(userName);
+    // in case submit is inside a form or we use onSubmit Attribute
+    event.preventDefault();
   }
 
   return (
@@ -21,6 +23,8 @@ function App() {
         onChange={handleChange}
         value={userName}
       />
+      {/* This is the default display of React Forms.
+      The use of submit type will refresh the page. */}
       <button onClick={handleSubmit}>Submit</button>
     </div>
   );
